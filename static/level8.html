@@ -1,0 +1,62 @@
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+	<title>DFA puzzles</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body class="level_body">
+	<div class="description">
+		Level <span id="level">8</span>: every odd position is an "a"
+	</div>
+	<canvas id="states" class="canvas"> </canvas>
+	<canvas id="input" class="canvas"> </canvas>
+	<!-- diagram manipulation buttons -->
+	<div class="button button_on" id="new_state"
+		onclick="buttonClicked('new_state');">
+		<span class="button_text">NEW STATE</span>
+	</div>
+	<div class="button" id="move_state"
+		onclick="buttonClicked('move_state');">
+		<span class="button_text">MOVE STATE</span>
+	</div>
+	<div class="button" id="remove_state"
+		onclick="buttonClicked('remove_state');">
+		<span class="button_text">REMOVE STATE</span>
+	</div>
+	<div class="button" id="new_transition"
+		onclick="buttonClicked('new_transition');">
+		<span class="button_text">NEW TRANS-ITION</span>
+	</div>
+	<div class="button" id="mark_accept_state"
+		onclick="buttonClicked('mark_accept_state');">
+		<span class="button_text">MARK ACCEPT STATE</span>
+	</div>
+	<!-- game state controls -->
+	<div class="button" id="submit"
+		onclick="submitDfa()">
+		<span class="button_text">SUBMIT</span>
+	</div>
+	<!-- transition letters selection prompt -->
+	<div id="select_mask" class="mask">
+		<div id="select_letter">
+			<div class="letter" onclick="setDelta('a')">
+				a
+			</div>
+			<div class="letter" onclick="setDelta('b')">
+				b
+			</div>
+			<div class="letter" onclick="setDelta('s')">
+				&#x03A3;
+			</div>
+		</div>
+	</div>
+	<div id="won_mask" class="mask">
+		<div id="won">
+			<p> YOU WON!! </p>
+			<a id="back" href="/index.html"> BACK </a>
+		</div>
+	</div>
+</body>
+</html>

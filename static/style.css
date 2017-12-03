@@ -1,0 +1,222 @@
+body {
+	background: white;
+	color: black;
+}
+
+.index_body {
+	display: block;
+}
+
+.level {
+	float: left;
+	width: 300px;
+	height: 200px;
+	margin: 100px;
+	border: 3px solid blue;
+	border-radius: 20px;
+	display: flex;
+	font-size: 20px;
+}
+
+.level a {
+	margin: auto;
+	text-align: center;
+}
+
+.level_body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	display: flex;
+}
+
+.description {
+	font-size: 20px;
+	margin: 200 auto;
+}
+
+.canvas {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#states {
+	z-index: 0;
+}
+
+#input {
+	z-index: 1;
+}
+
+.button {
+	/*make it a circle*/
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	border: 5px solid #11f;
+	/*center align content*/
+	display: flex;
+
+	/* positioning button*/
+	z-index: 2;
+	position: fixed;
+	transform: translate(-50%, -50%);
+}
+
+.button_text {
+	/*text look pretty*/
+	width: 150px;
+	font-size: 25px;
+	font-weight: bold;
+	user-select: none;
+	display: table-caption;
+	/*center align*/
+	text-align: center;
+	margin: auto;
+}
+
+/* button animation */
+.button_on {
+	animation: click 1s;
+	width: 130px;
+	height: 130px;
+}
+
+@keyframes click {
+	0%   {width: 130px; height: 130px;}
+	50%  {width: 140px; height: 140px;}
+	100% {width: 130px; height: 130px;}
+}
+
+.button_off {
+	animation: unclick 0.5s;
+}
+
+@keyframes unclick {
+	0%   {width: 130px; height: 130px;}
+	100% {width: 120px; height: 120px;}
+}
+
+/* button positions */
+#new_state {
+	top: 150px;
+	left: 100px;
+}
+
+#move_state {
+	top: 300px;
+	left: 100px;
+}
+
+#remove_state {
+	top: 450px;
+	left: 100px;
+}
+
+#new_transition {
+	top: 600px;
+	left: 100px;
+}
+
+#mark_accept_state {
+	top: 750px;
+	left: 100px;
+}
+
+#submit {
+	right: 0px;
+	bottom: 0px;
+}
+
+.mask {
+	position: fixed;
+	z-index: 3;
+	background: rgba(0,0,0,.5);
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	/*display should be flex when displayed*/
+	display: none;
+}
+
+#select_letter {
+	margin: auto;
+	background: #eee;
+	width: 500px;
+	height: 200px;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.letter {
+	width: 90px;
+	height: 90px;
+	background: #ee0;
+	border: 5px solid;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 60;
+	font-weight: bold;
+}
+
+#won {
+	z-index: 5;
+	margin: auto;
+	background: white;
+	border: 5px solid #09f;
+	border-radius: 20px;
+	width: 400px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+#won p {
+	font-size: 50px;
+	font-weight: bold;
+	color: #f30;
+}
+
+#back {
+	font-size: 30px;
+	padding: 10px;
+	border: 5px solid #09f;
+	border-radius: 15px;
+}
+
+.message {
+	width: 400px;
+	background: #ff3300;
+	color: white;
+	border: 5px solid #c00;
+	border-radius: 20px;
+	padding: 20px;
+	font-size: 20px;
+
+	z-index: 2;
+	position: fixed;
+	left: 50%;
+	top: -300px;
+	transform: translateX(-50%);
+	animation: fadeOut 5s linear;
+}
+
+@keyframes fadeOut {
+	0% { opacity: 0; top: -300px; }
+	20% { opacity: 1; top: 100px; }
+	80% { opacity: 1; top: 100px; }
+	100% { opacity: 0; top: -300px; }
+}
