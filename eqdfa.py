@@ -13,8 +13,8 @@ Syntax
 DFA JSON encoding
 It is basically the formal description of a DFA without the state names
 and the alphabet. Specifically,
-    {"delta":  {name_of_state: {letter: name_of_next_state}}
-     "init":   name_of_init_state
+    {"delta":  {name_of_state: {letter: name_of_next_state}},
+     "init":   name_of_init_state,
      "accept": [set_of_accept_states]}"""
 
 import json
