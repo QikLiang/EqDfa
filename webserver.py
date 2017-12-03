@@ -8,7 +8,7 @@ api = Api(app)
 class CheckAnswer(Resource):
     def post(self, level):
         print("get request received")
-        answer = level + ".json"
+        answer = "answers/" + level + ".json"
         print("level = " + level)
         guess = request.get_data(as_text=True)
         print("guess = " + guess)
