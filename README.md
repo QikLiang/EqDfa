@@ -24,6 +24,7 @@ and then open `http://localhost:5000/index.html` in a web browser.
 
 It is basically the formal description of a DFA without the state names
 and the alphabet. Specifically,
+
     {"delta":  {name_of_state: {letter: name_of_next_state}}
      "init":   name_of_init_state
      "accept": [set_of_accept_states]}
